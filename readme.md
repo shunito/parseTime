@@ -3,7 +3,7 @@ Parse Time
 時間文字列を秒に変換します。  
 以下のクロック値の例をHTML5 Audioで利用する秒に変換することを目的にしてます。
 
-EPUB Media Overlays 3.0 付録 B. クロック値の例
+EPUB Media Overlays 3.0 付録 B. クロック値の例  
 http://imagedrive.github.io/spec/epub30-mediaoverlays.xhtml#app-clock-examples
 
  
@@ -26,7 +26,7 @@ functionひとつなので適当にコピーするなり読み込むなりして
 ライセンス
 ----------
 Jasmineにあわせてみました。  
-Copyright &copy; 2014 Shunsuke Ito
+Copyright &copy; 2014 Shunsuke Ito  
 Distributed under the MIT License.
  
 [MIT]: http://www.opensource.org/licenses/mit-license.php
