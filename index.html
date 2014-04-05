@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Parse Time</title>
+    <style type="text/css">
+    </style>
+    <script src="parsetime.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    ;(function(){
+      var jq = "://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js",
+          p = window.location.protocol,
+          s = document.createElement("script");
+      if( p !== 'https'){ p = 'http'; }
+      s.src = p + jq;
+      
+      s.onload = function(){
+          $('#parse').on('click', function(){
+              $('#result').html( parseTime( $('#str').val(), $('#op').val() ) );
+          });
+      };      
+      document.getElementsByTagName('head')[0].appendChild(s);
+    }());
+    </script>
+  </head>
+  <body>
+  <div class="section">
+  <h1>Parse Time string to seconds</h1>
+
+  <p>文字列：
+    <input type="text" value="5:34:31.396" id="str">
+    <select id="op">
+        <option value="h">時間</option>
+        <option value="min">分</option>
+        <option value="" selected="selected">指定なし（秒）</option>
+        <option value="ms">ミリ秒</option>
+    </select> 
+    <button id="parse">parse</button></p>
+  <p>結果：<span id="result"></span></p>
+  <p><a href="jasmine/SpecRunner.html">jasmineによるテスト</a></p>
+
+  <p><a href="http://imagedrive.github.io/spec/epub30-mediaoverlays.xhtml#app-clock-examples">EPUB Media Overlays 3.0 付録 B. クロック値の例</a> がパース目標です。</p>
+  <p>
+5:34:31.396 = 5 時間 34 分 31 秒 396 ミリ秒<br>
+124:59:36 = 124 時間 59 分 36 秒<br>
+0:05:01.2 = 5 分 1 秒 200 ミリ秒<br>
+0:00:04 = 4 秒<br>
+09:58 = 9 分 58 秒<br>
+00:56.78 = 56 秒 780 ミリ秒<br>
+76.2s = 76.2 秒 = 76 秒 200 ミリ秒<br>
+7.75h = 7.75 時間 = 7 時間 45 分<br>
+13min = 13 分<br>
+2345ms = 2345 ミリ秒<br>
+12.345 = 12 秒 345 ミリ秒  
+  </p>
+  </div>
+  
+  </body>
+</html>
