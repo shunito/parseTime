@@ -6,12 +6,17 @@ Parse Time
 EPUB Media Overlays 3.0 付録 B. クロック値の例  
 http://imagedrive.github.io/spec/epub30-mediaoverlays.xhtml#app-clock-examples
 
+Readium用にresolveClockValueを追加しました。
+こちらはオプションをとらず、戻り値は秒に統一しています。
+
  
 使い方
 ------
 functionひとつなので適当にコピーするなり読み込むなりして、以下のように呼び出してください。
 
     var sec = parseTime(time, op);
+
+    var sec = resolveClockValue(time);
 
  
 パラメータ
